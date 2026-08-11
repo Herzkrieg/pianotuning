@@ -237,12 +237,13 @@
       counterObserver.unobserve(el);
       const target = parseInt(el.dataset.count, 10);
       const dur = 1400;
-      const start = performance.now();
-      (function tick(now) {
+      let start = null;
+      requestAnimationFrame(function tick(now) {
+        if (start === null) start = now;
         const p = Math.min((now - start) / dur, 1);
         el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString();
         if (p < 1) requestAnimationFrame(tick);
-      })(start);
+      });
     });
   }, { threshold: 0.5 });
   document.querySelectorAll(".stat-num").forEach(function (el) { counterObserver.observe(el); });
@@ -269,7 +270,7 @@
       const select = document.getElementById("service");
       const name = card.dataset.service;
       Array.from(select.options).forEach(function (opt) {
-        if (opt.text.replace(/\s+/g, " ").trim() === name) select.value = opt.value || opt.text;
+        if (opt.value === name) select.value = opt.value;
       });
       showToast("✅ " + name + " selected — finish booking below!");
       document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
@@ -338,6 +339,7 @@
 
   /* ---------- Confetti ---------- */
   function confettiBurst() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const colors = ["#b8860b", "#d4a017", "#f3e3bd", "#2e2a24", "#a9cf9f"];
     for (let i = 0; i < 60; i++) {
       const c = document.createElement("div");
