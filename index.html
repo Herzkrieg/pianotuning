@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightKey Piano Tuning</title>
+    <meta
+      name="description"
+      content="BrightKey offers local piano tuning, repairs, and support with an interactive service planner."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <a class="brand" href="#top">BrightKey</a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#planner">Care Planner</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero-content" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Local piano technician & tuning support</p>
+          <h1>Keep your piano concert-ready with friendly neighborhood care.</h1>
+          <p class="lead">
+            Book tunings, diagnose common issues, and get a live service recommendation in
+            seconds.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#planner">Build my care plan</a>
+            <a class="button button-secondary" href="#contact">Talk to a technician</a>
+          </div>
+          <ul class="hero-points">
+            <li>Same-week local visits</li>
+            <li>Acoustic tuning & action regulation</li>
+            <li>Helpful support for families, teachers, and venues</li>
+          </ul>
+        </div>
+
+        <div class="hero-panel">
+          <div class="floating-note">♪</div>
+          <div class="floating-note note-delay">♫</div>
+          <div class="status-card">
+            <p class="status-label">Today’s availability</p>
+            <p class="status-value">3 local slots open</p>
+            <p class="status-meta">Serving homes, schools, and small performance spaces.</p>
+          </div>
+
+          <div class="keyboard-card">
+            <p class="card-title">Tap a key for a quick tip</p>
+            <div class="keyboard" id="keyboard">
+              <button type="button" class="key" data-tip="A tuning visit helps stabilize pitch across the whole instrument.">C</button>
+              <button type="button" class="key" data-tip="Sticky or sluggish keys often improve with action cleaning and adjustment.">D</button>
+              <button type="button" class="key" data-tip="Buzzes and rattles can point to loose hardware or pedal regulation needs.">E</button>
+              <button type="button" class="key" data-tip="Seasonal humidity shifts are one of the biggest reasons pianos drift out of tune.">F</button>
+              <button type="button" class="key" data-tip="Preparing for a recital? A pre-event tuning keeps the instrument dependable.">G</button>
+            </div>
+            <p class="keyboard-tip" id="keyboard-tip">Press a piano key to reveal a care tip.</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section services" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Piano support that feels simple and reassuring.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Tuning</h3>
+            <p>Precision tuning for uprights, grands, studio instruments, and home pianos.</p>
+          </article>
+          <article class="service-card">
+            <h3>Repairs</h3>
+            <p>Help with sticky keys, pedal issues, odd noises, regulation, and minor action work.</p>
+          </article>
+          <article class="service-card">
+            <h3>Support Visits</h3>
+            <p>Friendly consultations for first-time piano owners, teachers, and event spaces.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section planner" id="planner">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive care planner</p>
+          <h2>Find the right service in under a minute.</h2>
+        </div>
+
+        <div class="planner-layout">
+          <form class="planner-form" id="planner-form">
+            <label>
+              Your area
+              <select id="area" name="area">
+                <option value="Downtown">Downtown</option>
+                <option value="Northside">Northside</option>
+                <option value="West End">West End</option>
+                <option value="Lakeside">Lakeside</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>Piano type</legend>
+              <div class="choice-row">
+                <label class="pill-option">
+                  <input type="radio" name="pianoType" value="Upright" checked />
+                  <span>Upright</span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="pianoType" value="Grand" />
+                  <span>Grand</span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="pianoType" value="Digital + acoustic support" />
+                  <span>Digital + acoustic support</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label>
+              Months since last tuning
+              <input id="months" name="months" type="range" min="0" max="36" value="10" />
+              <span class="range-value"><strong id="months-value">10</strong> months</span>
+            </label>
+
+            <div class="choice-stack">
+              <label class="toggle-option">
+                <input type="checkbox" id="repair" name="repair" />
+                <span>Add minor repair/support check</span>
+              </label>
+              <label class="toggle-option">
+                <input type="checkbox" id="priority" name="priority" />
+                <span>Need an evening or priority appointment</span>
+              </label>
+            </div>
+          </form>
+
+          <aside class="planner-summary" aria-live="polite">
+            <p class="summary-label">Recommended visit</p>
+            <h3 id="recommendation">Standard tuning visit</h3>
+            <p id="summary-copy">
+              Great for a piano that has been serviced within the last year and needs a refresh.
+            </p>
+
+            <dl class="summary-metrics">
+              <div>
+                <dt>Estimated price</dt>
+                <dd id="estimate">$145</dd>
+              </div>
+              <div>
+                <dt>Visit length</dt>
+                <dd id="duration">60–75 min</dd>
+              </div>
+              <div>
+                <dt>Service area</dt>
+                <dd id="service-area">Downtown</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Book support</p>
+          <h2>Tell us about your piano and we’ll suggest the next best step.</h2>
+        </div>
+
+        <div class="contact-layout">
+          <form class="contact-form" id="contact-form">
+            <label>
+              Your name
+              <input type="text" id="name" name="name" placeholder="Jordan" required />
+            </label>
+            <label>
+              Email
+              <input type="email" id="email" name="email" placeholder="jordan@example.com" required />
+            </label>
+            <label>
+              What do you need help with?
+              <textarea
+                id="details"
+                name="details"
+                rows="4"
+                placeholder="My upright piano sounds bright in the middle octave and one pedal feels loose."
+                required
+              ></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Preview my request</button>
+          </form>
+
+          <div class="confirmation-card" id="confirmation-card">
+            <p class="summary-label">Request preview</p>
+            <h3>Friendly, local support starts here.</h3>
+            <p id="confirmation-message">
+              Fill out the form to generate a polished booking note you can send.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
