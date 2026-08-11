@@ -131,7 +131,7 @@
   const status = document.getElementById("tunerStatus");
   const scoreEl = document.getElementById("tunerScore");
   const BASE_FREQ = 440;
-  let secretOffset = randomOffset(); // cents the string is out of tune
+  let detuneOffset = randomOffset(); // cents the string is out of tune
   let score = 0;
   let revealed = false;
 
@@ -141,7 +141,7 @@
     return off;
   }
   function centsToFreq(base, cents) { return base * Math.pow(2, cents / 1200); }
-  function currentCents() { return secretOffset + parseFloat(slider.value); }
+  function currentCents() { return detuneOffset + parseFloat(slider.value); }
 
   function updateNeedle() {
     if (!revealed) return;
@@ -194,7 +194,7 @@
   });
 
   document.getElementById("tunerNew").addEventListener("click", function () {
-    secretOffset = randomOffset();
+    detuneOffset = randomOffset();
     slider.value = 0;
     revealed = false;
     needle.style.left = "50%";
