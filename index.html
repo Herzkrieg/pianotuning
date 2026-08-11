@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PerfectPitch Piano Care — Local Piano Tuning &amp; Technician Services</title>
+  <meta name="description" content="Professional local piano tuning, repair, and maintenance. Book your appointment today with PerfectPitch Piano Care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎹</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🎹</span>
+        <span class="logo-text">PerfectPitch <em>Piano Care</em></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#piano">Try the Piano</a></li>
+        <li><a href="#tuning-game">Tuning Game</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#booking" class="btn btn-primary btn-sm">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="hero-notes" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow reveal">Your Local Piano Experts</p>
+      <h1 class="reveal">Bring Your Piano Back to <span class="accent">Perfect Pitch</span></h1>
+      <p class="hero-sub reveal">Certified piano technicians offering tuning, repair, regulation and restoration — right in your neighborhood. Over 2,500 pianos tuned and counting.</p>
+      <div class="hero-cta reveal">
+        <a href="#booking" class="btn btn-primary btn-lg">Book a Tuning</a>
+        <a href="#piano" class="btn btn-outline btn-lg">🎵 Play Our Piano</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="stat-num" data-count="2500">0</span><span class="stat-label">Pianos Tuned</span></div>
+        <div class="stat"><span class="stat-num" data-count="18">0</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-num" data-count="99">0</span><span class="stat-label">% Happy Clients</span></div>
+      </div>
+    </div>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,60 C240,100 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z" fill="var(--bg)"></path></svg>
+    </div>
+  </header>
+
+  <main>
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title reveal">Our Services</h2>
+        <p class="section-sub reveal">Everything your piano needs, from a quick tune-up to full restoration.</p>
+        <div class="services-grid">
+          <article class="service-card reveal" data-service="Standard Tuning" data-price="120">
+            <div class="service-icon">🎼</div>
+            <h3>Standard Tuning</h3>
+            <p>A full concert-pitch tuning (A440) for pianos serviced within the last year. Takes about 90 minutes.</p>
+            <span class="service-price">$120</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+          <article class="service-card reveal" data-service="Pitch Raise + Tuning" data-price="180">
+            <div class="service-icon">📈</div>
+            <h3>Pitch Raise + Tuning</h3>
+            <p>For pianos that haven't been tuned in over a year. Two passes to safely bring it back to pitch.</p>
+            <span class="service-price">$180</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+          <article class="service-card reveal" data-service="Repair & Regulation" data-price="95">
+            <div class="service-icon">🔧</div>
+            <h3>Repair &amp; Regulation</h3>
+            <p>Sticky keys, buzzing strings, squeaky pedals — we diagnose and fix mechanical issues on-site.</p>
+            <span class="service-price">from $95/hr</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+          <article class="service-card reveal" data-service="Voicing" data-price="150">
+            <div class="service-icon">🎶</div>
+            <h3>Voicing</h3>
+            <p>Reshape and needle the hammers to give your piano a warmer or brighter tone — tailored to your taste.</p>
+            <span class="service-price">from $150</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+          <article class="service-card reveal" data-service="Full Restoration" data-price="0">
+            <div class="service-icon">✨</div>
+            <h3>Full Restoration</h3>
+            <p>Complete rebuilds for heirloom and vintage instruments: new strings, hammers, felts and finish.</p>
+            <span class="service-price">Free quote</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+          <article class="service-card reveal" data-service="Humidity Control" data-price="450">
+            <div class="service-icon">💧</div>
+            <h3>Humidity Control</h3>
+            <p>Installation of climate control systems to protect your piano from seasonal swings, installed &amp; calibrated.</p>
+            <span class="service-price">from $450</span>
+            <button class="btn btn-ghost select-service">Select →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Piano -->
+    <section class="section section-dark" id="piano">
+      <div class="container">
+        <h2 class="section-title reveal">Try Our Piano 🎹</h2>
+        <p class="section-sub reveal">Click the keys or use your keyboard (A–K for white keys, W–U for black keys). This is what a freshly tuned piano sounds like!</p>
+        <div class="piano-wrap reveal">
+          <div class="piano" id="pianoKeys" role="group" aria-label="Interactive piano keyboard"></div>
+        </div>
+        <p class="piano-hint reveal">💡 Try playing: <button class="chip play-melody" data-melody="twinkle">Twinkle Twinkle</button> <button class="chip play-melody" data-melody="ode">Ode to Joy</button> <button class="chip play-melody" data-melody="fur">Für Elise</button></p>
+      </div>
+    </section>
+
+    <!-- Tuning Game -->
+    <section class="section" id="tuning-game">
+      <div class="container">
+        <h2 class="section-title reveal">Can You Tune a Piano? 🎯</h2>
+        <p class="section-sub reveal">Experience what our technicians do! Drag the slider until the wobbly string matches the reference tone. Get it within 3 cents to win.</p>
+        <div class="tuner reveal">
+          <div class="tuner-display">
+            <div class="tuner-gauge">
+              <div class="gauge-scale">
+                <span>-50</span><span>-25</span><span class="gauge-zero">0</span><span>+25</span><span>+50</span>
+              </div>
+              <div class="gauge-track">
+                <div class="gauge-target"></div>
+                <div class="gauge-needle" id="gaugeNeedle"></div>
+              </div>
+              <p class="gauge-readout"><span id="centsReadout">?</span> cents</p>
+            </div>
+            <div class="tuner-status" id="tunerStatus">Press ▶ to hear the out-of-tune string</div>
+          </div>
+          <div class="tuner-controls">
+            <button class="btn btn-primary" id="tunerPlay">▶ Play Tone</button>
+            <input type="range" id="tunerSlider" min="-50" max="50" value="0" step="0.5" aria-label="Tuning adjustment in cents">
+            <button class="btn btn-outline" id="tunerCheck">Check Tuning</button>
+            <button class="btn btn-ghost" id="tunerNew">New String</button>
+          </div>
+          <p class="tuner-score">Strings tuned: <strong id="tunerScore">0</strong> 🏆</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section section-alt" id="why">
+      <div class="container">
+        <h2 class="section-title reveal">Why Choose PerfectPitch?</h2>
+        <div class="why-grid">
+          <div class="why-item reveal"><span>🏅</span><h3>Certified Technicians</h3><p>Registered Piano Technicians (RPT) with the Piano Technicians Guild.</p></div>
+          <div class="why-item reveal"><span>🚗</span><h3>We Come to You</h3><p>Serving the entire metro area with flexible scheduling, including weekends.</p></div>
+          <div class="why-item reveal"><span>💯</span><h3>Satisfaction Guaranteed</h3><p>If you're not happy with your tuning, we'll return within 30 days for free.</p></div>
+          <div class="why-item reveal"><span>💬</span><h3>Honest Advice</h3><p>Clear, upfront pricing and honest assessments — no upselling, ever.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title reveal">What Our Clients Say</h2>
+        <div class="carousel reveal" id="carousel">
+          <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous review">‹</button>
+          <div class="carousel-track" id="carouselTrack">
+            <blockquote class="testimonial active">
+              <p>"My grandmother's 1920s upright sounds better than it has in decades. Meticulous, friendly, and clearly passionate about pianos."</p>
+              <footer>★★★★★ — Sarah M., <cite>Maplewood</cite></footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>"Fast, professional, and the pitch raise made a night-and-day difference. My kids actually want to practice now!"</p>
+              <footer>★★★★★ — David K., <cite>Riverside</cite></footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>"They fixed three sticky keys and tuned our baby grand in one visit. Fair price and they even taught me how humidity affects the soundboard."</p>
+              <footer>★★★★★ — Priya R., <cite>Oak Hill</cite></footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>"As a piano teacher I'm picky about tuning. PerfectPitch is the only service I recommend to my students' families."</p>
+              <footer>★★★★★ — Thomas B., <cite>Downtown</cite></footer>
+            </blockquote>
+          </div>
+          <button class="carousel-btn next" id="carouselNext" aria-label="Next review">›</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section section-dark" id="booking">
+      <div class="container booking-wrap">
+        <div class="booking-info reveal">
+          <h2 class="section-title left">Book Your Appointment</h2>
+          <p>Fill in the form and we'll confirm your appointment within 24 hours. Same-week slots usually available!</p>
+          <ul class="booking-perks">
+            <li>✅ Free assessment with every visit</li>
+            <li>✅ 30-day tuning guarantee</li>
+            <li>✅ Evening &amp; weekend appointments</li>
+            <li>✅ All piano types: grand, upright, digital hybrid</li>
+          </ul>
+          <div class="contact-quick">
+            <p>Prefer to talk? <a href="tel:+15551234567">📞 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@perfectpitchpiano.example">✉️ hello@perfectpitchpiano.example</a></p>
+          </div>
+        </div>
+        <form class="booking-form reveal" id="bookingForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Doe">
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com">
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="service">Service *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Choose a service…</option>
+                <option>Standard Tuning</option>
+                <option>Pitch Raise + Tuning</option>
+                <option>Repair &amp; Regulation</option>
+                <option>Voicing</option>
+                <option>Full Restoration</option>
+                <option>Humidity Control</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="pianoType">Piano Type</label>
+              <select id="pianoType" name="pianoType">
+                <option>Upright</option>
+                <option>Baby Grand</option>
+                <option>Grand</option>
+                <option>Spinet / Console</option>
+                <option>Other / Not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <div class="form-field">
+            <label for="notes">Anything we should know?</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="e.g. Last tuned 3 years ago, one key sticks…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Request Appointment 🎹</button>
+          <p class="form-note">We'll never share your details. Demo form — no data is sent.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>How often should my piano be tuned?</summary>
+            <p>Most manufacturers recommend tuning twice a year. At minimum, once a year keeps your piano healthy. New pianos and pianos in rooms with big humidity swings may need more frequent visits.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How long does a tuning take?</summary>
+            <p>A standard tuning takes about 60–90 minutes. If your piano hasn't been serviced in a while, a pitch raise may be needed first, adding another 45–60 minutes.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>My piano hasn't been tuned in years. Is it too late?</summary>
+            <p>Almost never! Pianos that have gone years without service usually need a pitch raise followed by a fine tuning. We'll assess it for free and give you an honest recommendation.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you service digital or hybrid pianos?</summary>
+            <p>We service hybrid pianos with real actions (like the Yamaha AvantGrand). Fully digital keyboards don't require tuning, but we're happy to advise on setup and maintenance.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What areas do you serve?</summary>
+            <p>We cover the entire metro area and surrounding suburbs within a 40-mile radius. A small travel fee may apply for locations beyond 25 miles — we'll always tell you upfront.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="logo"><span class="logo-icon">🎹</span> PerfectPitch <em>Piano Care</em></p>
+        <p class="footer-tag">Keeping local pianos in tune since 2007.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#booking">Book Now</a>
+        <a href="#faq">FAQ</a>
+        <a href="tel:+15551234567">(555) 123-4567</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> PerfectPitch Piano Care. Demo website.</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
