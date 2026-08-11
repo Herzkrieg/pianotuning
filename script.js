@@ -14,8 +14,8 @@ const confirmationMessage = document.getElementById("confirmation-message");
 function updatePlanner() {
   const formData = new FormData(plannerForm);
   const months = Number(formData.get("months"));
-  const repair = formData.get("repair") === "on";
-  const priority = formData.get("priority") === "on";
+  const repair = formData.has("repair");
+  const priority = formData.has("priority");
   const pianoType = formData.get("pianoType");
   const area = formData.get("area");
 
@@ -61,7 +61,6 @@ function updatePlanner() {
 }
 
 plannerForm.addEventListener("input", updatePlanner);
-plannerForm.addEventListener("change", updatePlanner);
 updatePlanner();
 
 keyboard.addEventListener("click", (event) => {
@@ -78,8 +77,10 @@ contactForm.addEventListener("submit", (event) => {
 
   const formData = new FormData(contactForm);
   const name = formData.get("name");
-  const email = formData.get("email");
   const details = formData.get("details");
+  const requestType = details.toLowerCase().includes("pedal") || details.toLowerCase().includes("key")
+    ? "tuning and support"
+    : "tuning";
 
-  confirmationMessage.textContent = `${name}, thanks! We’d prepare a local support reply for ${email} that says: “Hello, I’m looking for piano tuning support. ${details}”`;
+  confirmationMessage.textContent = `${name}, thanks! Your ${requestType} request preview is ready, and we’ll follow up using the contact details you entered.`;
 });
