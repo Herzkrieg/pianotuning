@@ -1,0 +1,66 @@
+name: Android CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  NDK_VERSION: 27.3.13750724
+
+jobs:
+  test:
+    name: Tests & Lint (host)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: android
+      - name: cargo fmt check
+        run: cd android && cargo fmt --all --check
+      - name: cargo clippy
+        run: cd android && cargo clippy --workspace --all-targets -- -D warnings
+      - name: cargo test
+        run: cd android && cargo test --workspace
+
+  build-apk:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: android
+      - name: Set up Android SDK/NDK
+        uses: android-actions/setup-android@v3
+      - name: Install NDK
+        run: sdkmanager "ndk;${{ env.NDK_VERSION }}"
+      - name: Install cargo-apk
+        run: cargo install cargo-apk --locked
+      - name: Check Android targets
+        env:
+          ANDROID_NDK_ROOT: ${{ env.ANDROID_HOME }}/ndk/${{ env.NDK_VERSION }}
+        run: |
+          cd android
+          cargo apk check -p pianotuner --lib
+      - name: Build APK
+        env:
+          ANDROID_NDK_ROOT: ${{ env.ANDROID_HOME }}/ndk/${{ env.NDK_VERSION }}
+        run: cd android/crates/app && cargo apk build --lib
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: pianotuner-apk
+          path: android/target/debug/apk/*.apk
+          if-no-files-found: error
